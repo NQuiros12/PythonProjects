@@ -26,7 +26,7 @@ class Economy():
         print("Esos ahorros en dolares son",self.savesDollar)
 
 
-nico_economy= Economy()
+nico_economy = Economy()
 nico_economy.savings()
 nico_economy.doubts()
 print(nico_economy.savings())
