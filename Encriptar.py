@@ -18,8 +18,12 @@ def VocaloConsonante(letra):
          return abc.index(letra)
     elif(letra == "ñ"):
         return "ñ"
-    elif(letra == " " or letra == "." or letra == ","):
+    elif(letra == " "):
         return " "
+    elif (letra == "."):
+        return "."
+    elif(letra == ","):
+        return ","
     elif(letra == "\n"):
         return "\n"
     else:
@@ -30,5 +34,5 @@ for i in range(len(mensaje)):
 
 print("El mensaje encriptado es")
 for numero in mensajeEncriptado:
-    print(numero,end = ".")
+    print(numero,end = "/")
 print("\n")
