@@ -30,5 +30,5 @@ for i in range(len(mensaje)):
 
 print("El mensaje encriptado es")
 for numero in mensajeEncriptado:
-    print(numero,end = "//")
+    print(numero,end = ".")
 print("\n")
