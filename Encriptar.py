@@ -8,13 +8,13 @@ mensaje = mensaje.lower()
 mensaje = list(mensaje)
 #Creamos una lista para el mensaje encriptado
 mensajeEncriptado = mensaje
-#lista de letras en ascii pero sin ñ
-#lista de letras en ascii pero sin ñ
+#lista de letras ahora con ñ
 abc = list(string.ascii_lowercase)
+abc.insert(13,"ñ")
 abc = abc + ["a","b","c"]
 #Creamos la funcion que encripta el mensaje, letra por letra.
 def MetodoCesar(letra):
-    if(letra == " "):
+    if(letra == " " or letra == "\n"):
         return "-"
     elif(letra == "."):
         return "."
