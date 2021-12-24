@@ -25,7 +25,9 @@ def MetodoCesar(letra):
 #Creamos un loop que corra por dentro de todas las letras del sistema.
 for i in range(len(mensaje)):
     mensajeEncriptado[i] = MetodoCesar(mensaje[i])
-
+#Vamos a darle dos pistas a los muchachxs
+print("Pista 1:\n","k == ",MetodoCesar("k"))
+print("Pista 2:\n","w == ",MetodoCesar("w"))
 print("El mensaje encriptado es")
 for numero in mensajeEncriptado:
     print(numero,end = " ")
