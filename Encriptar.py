@@ -10,7 +10,7 @@ mensaje = list(mensaje)
 mensajeEncriptado = mensaje
 #lista de letras ahora con ñ
 abc = list(string.ascii_lowercase)
-abc.insert(13,"ñ")
+abc.insert(14,"ñ")
 abc = abc + ["a","b","c"]
 #Creamos la funcion que encripta el mensaje, letra por letra.
 def MetodoCesar(letra):
