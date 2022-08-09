@@ -53,4 +53,4 @@ def desencriptar_cesar_pal(palabra:str)->str:
             palabra_encri.append(dic_esp[dic_esp.index(letra)-3])
     #Devolvemos la lista unida por un join
     return "".join(palabra_encri)
-print(desencriptar_cesar_pal("krnd"))
+print(desencriptar_cesar_pal("krñd"))

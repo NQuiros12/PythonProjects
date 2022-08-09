@@ -17,7 +17,7 @@ print(f"El mensaje es {mensaje}")
 import metodos_encriptar as mte
 mensaje_c = [mte.metodo_cesar_pal(palabra) for palabra in mensaje]
 print(" ".join(mensaje_c))
-mensaje_d =[mte.desencriptar_cesar_pal(palabra) for palabra in mensaje]
+mensaje_d =[mte.desencriptar_cesar_pal(palabra) for palabra in mensaje_c]
 print(f"Ahora descrifrado:{mensaje_d}")
 #Creamos un loop que corra por dentro de todas las letras del sistema.
 # for i in range(len(mensaje)):
