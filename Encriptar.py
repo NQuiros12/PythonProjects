@@ -1,34 +1,31 @@
 import string
-#Cargamos el mensaje.
-#fcenGuys = ["Sole","Fi","Joaco","AgusA","AgusB","Vicky","Juli"]
-mensaje = """Les queria agradecer por este gran año juntos, por bancarme siempre en todas mis ideas. 
-Por darme animos para cada uno de mis proyectos. Gracias por dejarme ser quien soy sin juzgarme nunca. Los amo"""
-mensaje = mensaje.lower()
-#Lo metemos dentro de una lista
-mensaje = list(mensaje)
-#Creamos una lista para el mensaje encriptado
-mensajeEncriptado = mensaje
+#Read the message from a txt.
+def read_text(filename:str) -> list:
+  with open(filename) as f:
+    lines = f.readlines()
+    #Split the list into words
+    lines = [m.split() for m in lines]
+    #Flatten the list into just one list of words
+    lines = [item for sublist in lines for item in sublist]
+    return lines
+mensaje = read_text("mensaje.txt")
 #lista de letras ahora con ñ
-abc = list(string.ascii_lowercase)
-abc.insert(14,"ñ")
-abc = abc + ["a","b","c"]
+#mensaje = mensaje.split(" ").lower().strip("\n")
+print(f"El mensaje es {mensaje}")
 #Creamos la funcion que encripta el mensaje, letra por letra.
-def MetodoCesar(letra):
-    if(letra == " " or letra == "\n"):
-        return "-"
-    elif(letra == "."):
-        return "."
-    elif(letra == ","):
-        return ","
-    else:
-        return abc[abc.index(letra)+3]
+
+import metodos_encriptar as mte
+mensaje_c = [mte.metodo_cesar_pal(palabra) for palabra in mensaje]
+print(" ".join(mensaje_c))
+mensaje_d =[mte.desencriptar_cesar_pal(palabra) for palabra in mensaje]
+print(f"Ahora descrifrado:{mensaje_d}")
 #Creamos un loop que corra por dentro de todas las letras del sistema.
-for i in range(len(mensaje)):
-    mensajeEncriptado[i] = MetodoCesar(mensaje[i])
-#Vamos a darle dos pistas a los muchachxs
-print("Pista 1:\n","k == ",MetodoCesar("k"))
-print("Pista 2:\n","w == ",MetodoCesar("w"))
-print("El mensaje encriptado es")
-for numero in mensajeEncriptado:
-    print(numero,end = " ")
-print("\n" )
+# for i in range(len(mensaje)):
+#     mensajeEncriptado[i] = MetodoCesar(mensaje[i])
+# #Vamos a darle dos pistas a los muchachxs
+# print("Pista 1:\n","k == ",MetodoCesar("k"))
+# print("Pista 2:\n","w == ",MetodoCesar("w"))
+# print("El mensaje encriptado es")
+# for numero in mensajeEncriptado:
+#     print(numero,end = " ")
+# print("\n" )
