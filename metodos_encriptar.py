@@ -38,7 +38,7 @@ def desencriptar_cesar_pal(palabra:str)->str:
     dic_esp = list(string.ascii_lowercase)
     dic_esp.insert(14,"ñ")
     dic_esp = dic_esp + ["a","b","c"]
-    print(dic_esp)
+    print(dic_esp.index('b')-3)
     #Lista con las letras encriptadas listas para encriptar.
     palabra_encri = []
     #Separamos la palabra en letras
@@ -50,7 +50,9 @@ def desencriptar_cesar_pal(palabra:str)->str:
         elif(letra == ","):
             palabra_encri.append(",")
         else:
+            #La tecnica de usar el index genera un bug
+            print(dic_esp[dic_esp.index(letra)-3],letra)
             palabra_encri.append(dic_esp[dic_esp.index(letra)-3])
     #Devolvemos la lista unida por un join
     return "".join(palabra_encri)
-print(desencriptar_cesar_pal("krñd"))
+print(desencriptar_cesar_pal("krb"))
